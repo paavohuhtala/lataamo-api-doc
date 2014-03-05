@@ -1,0 +1,32 @@
+<!doctype HTML>
+<html>
+	<head>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>
+		<script src="js/markdown.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<script type="text/javascript">
+			$.get("api.md", function(data)
+			{
+				var markdowned = markdown.toHTML(data);
+				$("#doc").html(markdowned);
+			});
+		</script>
+
+		<title>Lataamo unofficial API documentation</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div id="doc">
+				<div class="progress progress-striped active">
+				  <div class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+				    <span class="sr-only">Loading...</span>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
